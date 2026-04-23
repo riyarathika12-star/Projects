@@ -1,0 +1,27 @@
+<!DOCTYPYE HTML>
+<html>
+    <head>
+        <title>javascript</title>
+    </head>
+    <body>
+        <script>
+            alert("You are in class");
+            console.log("this is output");
+            document.write(" This is directly displayed ");
+            var name=prompt("Enter your name:");
+            confirm("are you really want to exit");
+            let amount=5;
+            if(amount==5)
+        {
+            document.write("you can buy a milky bar");
+        }
+        else{
+            document.write("you cannot buy a milky bar");
+        }
+        for(var i=1;i<5;i++)
+        {
+            console.log(i);
+        }
+            </script>
+    </body>
+</html>
