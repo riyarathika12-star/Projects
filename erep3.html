@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>CSS Grid Layout</title>
+
+<style>
+
+/* Page styling */
+body{
+margin:0;
+font-family:Arial, sans-serif;
+}
+
+/* Grid container */
+.container{
+
+display:grid;
+
+/* Creating 3 columns */
+grid-template-columns: 1fr 2fr 1fr;
+
+/* Creating rows */
+grid-template-rows: auto auto 1fr auto;
+
+/* Gap between grid items */
+gap:10px;
+
+padding:10px;
+}
+
+/* Header section */
+.header{
+grid-column:1/4;   /* Spans across all columns */
+background:#4CAF50;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+/* Navigation bar */
+.nav{
+grid-column:1/4;
+background:#333;
+color:white;
+padding:10px;
+text-align:center;
+}
+
+/* Sidebar */
+.sidebar{
+background:#f4f4f4;
+padding:20px;
+}
+
+/* Main content area */
+.main{
+background:#ddd;
+padding:20px;
+}
+
+/* Right side content */
+.extra{
+background:#f4f4f4;
+padding:20px;
+}
+
+/* Footer section */
+.footer{
+grid-column:1/4;
+background:#222;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+/* Responsive Design */
+@media(max-width:768px){
+
+.container{
+
+/* Change to single column layout */
+grid-template-columns:1fr;
+
+}
+
+.header,
+.nav,
+.sidebar,
+.main,
+.extra,
+.footer{
+
+grid-column:1;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- Header Section -->
+<div class="header">
+<h1>My Website</h1>
+<p>CSS Grid Layout Example</p>
+</div>
+
+<!-- Navigation Section -->
+<div class="nav">
+Home | About | Services | Contact
+</div>
+
+<!-- Left Sidebar -->
+<div class="sidebar">
+<h3>Sidebar</h3>
+<p>Links and information</p>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+<h2>Main Content</h2>
+<p>This is the main section of the webpage.</p>
+</div>
+
+<!-- Extra Content -->
+<div class="extra">
+<h3>Extra Section</h3>
+<p>Additional information</p>
+</div>
+
+<!-- Footer Section -->
+<div class="footer">
+<p>© 2026 My Website</p>
+</div>
+
+</div>
+
+</body>
+</html>

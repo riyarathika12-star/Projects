@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fetch API Data Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    tr:hover {
+      background-color: #e6f7ff;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Posts from API</h1>
+  <div id="data"></div>
+
+  <script>
+    const apiUrl = "https://jsonplaceholder.typicode.com/posts";
+
+    // Replace API text with short English placeholders
+    const englishTitles = [
+      "Hello World", "Simple Note", "Test Post", "Quick Update",
+      "Short Story", "Sample Data", "Demo Entry", "Basic Info",
+      "Tiny Message", "Plain Text"
+    ];
+
+    const englishBodies = [
+      "This is a short post.",
+      "Content is small and clear.",
+      "English text only here.",
+      "Quick demo message.",
+      "Simple body example.",
+      "Short and neat content.",
+      "Clean English sentence.",
+      "Tiny sample body.",
+      "Brief text example.",
+      "Minimal English content."
+    ];
+
+    fetch(apiUrl)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json();
+      })
+      .then(data => {
+        const container = document.getElementById("data");
+        const table = document.createElement("table");
+        const headerRow = document.createElement("tr");
+
+        ["ID", "Title", "Body"].forEach(headerText => {
+          const th = document.createElement("th");
+          th.textContent = headerText;
+          headerRow.appendChild(th);
+        });
+        table.appendChild(headerRow);
+
+        // Show first 10 rows but override with English content
+        data.slice(0, 10).forEach((item, index) => {
+          const row = document.createElement("tr");
+
+          const idCell = document.createElement("td");
+          idCell.textContent = item.id;
+          row.appendChild(idCell);
+
+          const titleCell = document.createElement("td");
+          titleCell.textContent = englishTitles[index];
+          row.appendChild(titleCell);
+
+          const bodyCell = document.createElement("td");
+          bodyCell.textContent = englishBodies[index];
+          row.appendChild(bodyCell);
+
+          table.appendChild(row);
+        });
+
+        container.appendChild(table);
+      })
+      .catch(error => {
+        const container = document.getElementById("data");
+        container.innerHTML = `<p class="error">Error fetching data: ${error.message}</p>`;
+        console.error("Error fetching data:", error);
+      });
+  </script>
+</body>
+</html>
+
+
+

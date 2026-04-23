@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CSS Enhancement</title>
+<style>
+body{
+    font-family: Arial;
+    margin:0;
+    padding:0;
+}
+.header{
+    height:200px;
+    color:white;
+    text-align:center;
+    padding-top:60px;
+    background-image:
+    url("https://picsum.photos/1200/200"),
+    url("https://picsum.photos/200");
+    background-position:center, right bottom;
+    background-repeat:no-repeat, no-repeat;
+}
+.card{
+    width:300px;
+    margin:40px auto;
+    padding:20px;
+    border-radius:15px;
+    background-color:white;
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    text-align:center;
+}
+.card h2{
+    text-shadow:2px 2px 4px gray;
+}
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:20px;
+    background-color:#007BFF;
+    color:white;
+    font-size:16px;
+    box-shadow:2px 2px 8px gray;
+}
+button:hover{
+    background-color:#0056b3;
+}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>CSS Enhancement Demo</h1>
+<p>Shadows, Rounded Borders & Multiple Backgrounds</p>
+</div>
+<div class="card">
+<h2>Welcome</h2>
+<p>This box demonstrates CSS styling using shadow and rounded borders.</p>
+<button>Click Me</button>
+</div>
+</body>
+</html>

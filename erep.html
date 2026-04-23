@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Responsive Registration Form</title>
+
+<!-- Bootstrap CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* Page background */
+body{
+    background: linear-gradient(to right,#74ebd5,#ACB6E5);
+    font-family: Arial, sans-serif;
+}
+
+/* Form container */
+.registration-box{
+    background:white;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Title */
+.form-title{
+    text-align:center;
+    margin-bottom:25px;
+    font-weight:bold;
+}
+
+/* Button styling */
+.btn-register{
+    width:100%;
+    font-size:18px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container mt-5">
+
+<div class="row justify-content-center">
+
+<div class="col-lg-6 col-md-8 col-sm-12">
+
+<div class="registration-box">
+
+<h2 class="form-title">Student Registration Form</h2>
+
+<form>
+
+<div class="mb-3">
+<label class="form-label">Full Name</label>
+<input type="text" class="form-control" placeholder="Enter your full name" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Email Address</label>
+<input type="email" class="form-control" placeholder="Enter your email" required>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Password</label>
+<input type="password" class="form-control" placeholder="Enter password">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Phone Number</label>
+<input type="tel" class="form-control" placeholder="Enter phone number">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Date of Birth</label>
+<input type="date" class="form-control">
+</div>
+
+<div class="mb-3">
+<label class="form-label">Gender</label>
+<br>
+
+<div class="form-check form-check-inline">
+<input class="form-check-input" type="radio" name="gender">
+<label class="form-check-label">Male</label>
+</div>
+
+<div class="form-check form-check-inline">
+<input class="form-check-input" type="radio" name="gender">
+<label class="form-check-label">Female</label>
+</div>
+
+</div>
+
+<div class="mb-3">
+<label class="form-label">Address</label>
+<textarea class="form-control" rows="3"></textarea>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Course</label>
+<select class="form-select">
+<option>Select Course</option>
+<option>BCA</option>
+<option>B.Sc Computer Science</option>
+<option>B.Tech IT</option>
+<option>MCA</option>
+</select>
+</div>
+
+<div class="mb-3">
+<label class="form-label">Upload Photo</label>
+<input type="file" class="form-control">
+</div>
+
+<button type="submit" class="btn btn-primary btn-register">
+Register
+</button>
+
+<button type="reset" class="btn btn-secondary btn-register mt-2">
+Reset
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
